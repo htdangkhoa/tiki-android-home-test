@@ -3,6 +3,10 @@
 </h1>
 
 <p align="center">
+  <img src="https://raw.githubusercontent.com/htdangkhoa/tiki-android-home-test/master/art/demo_tiki.gif" width="250" alt="Development" />
+</p>
+
+<p align="center">
   <a href="https://img.shields.io/badge/Platform-Android%206.0-36da7e?logo=android&style=for-the-badge">
     <img src="https://img.shields.io/badge/Platform-Android%206.0-36da7e?logo=android&style=for-the-badge" alt="Platform" />
   </a>
