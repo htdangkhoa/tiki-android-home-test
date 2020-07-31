@@ -19,9 +19,9 @@ android {
     buildTypes {
         def BASE_URL = "BASE_URL"
 
-        def DEV = "\"" + "http://0.0.0.0:80/" + "\""
+        def DEV = "\"" + "https://api.tiki.vn/" + "\""
 
-        def PROD = "\"" + "<ENTER_YOUR_HOST>" + "\""
+        def PROD = "\"" + "https://api.tiki.vn/" + "\""
 
         debug {
             buildConfigField "String", BASE_URL, DEV
@@ -56,6 +56,7 @@ dependencies {
     testImplementation "junit:junit:4.13"
     androidTestImplementation "androidx.test.ext:junit:1.1.1"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
 
     implementation "com.jakewharton.timber:timber:$versions.timber"
 
@@ -85,6 +86,12 @@ dependencies {
 
     implementation "com.afollestad.material-dialogs:core:$versions.materialDialogs"
     implementation "com.afollestad.material-dialogs:input:$versions.materialDialogs"
+
+    implementation "com.github.denzcoskun:ImageSlideshow:$versions.imageSlideshow"
+    implementation "com.daimajia.slider:library:1.1.5@aar"
+    implementation "com.github.bumptech.glide:glide:4.11.0"
+    annotationProcessor "com.github.bumptech.glide:compiler:4.11.0"
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4"
 }
 
 ktlint {

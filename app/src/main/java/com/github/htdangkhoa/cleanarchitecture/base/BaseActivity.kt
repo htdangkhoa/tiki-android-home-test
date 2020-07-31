@@ -18,9 +18,7 @@ import com.chibatching.kotpref.blockingBulk
 import com.github.htdangkhoa.cleanarchitecture.BuildConfig
 import com.github.htdangkhoa.cleanarchitecture.Constant
 import com.github.htdangkhoa.cleanarchitecture.data.model.AuthModel
-import com.github.htdangkhoa.cleanarchitecture.data.model.ResponseExceptionModel
 import com.github.htdangkhoa.cleanarchitecture.extension.appName
-import com.github.htdangkhoa.cleanarchitecture.ui.login.LoginActivity
 import com.github.nisrulz.sensey.Sensey
 import com.github.nisrulz.sensey.ShakeDetector
 import com.pawegio.kandroid.startActivity
@@ -126,25 +124,22 @@ abstract class BaseActivity<VM : ViewModel>(clazz: KClass<VM>) : AppCompatActivi
     protected fun handleHttpError(throwable: Throwable?) {
         when (throwable) {
             is HttpException -> {
-                logout(throwable.code())
-            }
-            is ResponseExceptionModel -> {
-                throwable.responseModel?.code?.let { logout(it) }
+//                logout(throwable.code())
             }
         }
     }
 
-    protected fun logout(code: Int) {
-        if (code == 401) {
-            AuthModel.clear()
-
-            if (this::class.simpleName != LoginActivity::class.simpleName) {
-                startActivity<LoginActivity>()
-
-                finishAfterTransition()
-            }
-        }
-    }
+//    protected fun logout(code: Int) {
+//        if (code == 401) {
+//            AuthModel.clear()
+//
+//            if (this::class.simpleName != LoginActivity::class.simpleName) {
+//                startActivity<LoginActivity>()
+//
+//                finishAfterTransition()
+//            }
+//        }
+//    }
 
     protected fun showDialog(title: String? = "Info", message: String? = null): MaterialDialog {
         return MaterialDialog(this).show {

@@ -1,5 +1,5 @@
 <h1 align='center'>
-    Android Clean Architecture
+    Demo Tiki
 </h1>
 
 <p align="center">

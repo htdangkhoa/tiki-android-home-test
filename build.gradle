@@ -37,6 +37,8 @@ buildscript {
                 kotpref: "2.10.0",
 
                 materialDialogs: "3.1.1",
+
+                imageSlideshow: "0.0.7"
         ]
     }
     

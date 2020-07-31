@@ -1,28 +1,17 @@
 package com.github.htdangkhoa.cleanarchitecture.data.service
 
-import com.github.htdangkhoa.cleanarchitecture.data.remote.SuccessResponse
-import com.github.htdangkhoa.cleanarchitecture.data.remote.auth.AuthResponse
-import com.github.htdangkhoa.cleanarchitecture.data.remote.auth.login.LoginRequest
-import com.github.htdangkhoa.cleanarchitecture.data.remote.auth.renew_token.RenewTokenRequest
-import com.github.htdangkhoa.cleanarchitecture.data.remote.user.GetMeResponse
-import retrofit2.http.Body
+import com.github.htdangkhoa.cleanarchitecture.data.remote.BannersResponse
+import com.github.htdangkhoa.cleanarchitecture.data.remote.FlashDealsResponse
+import com.github.htdangkhoa.cleanarchitecture.data.remote.QuickLinksResponse
 import retrofit2.http.GET
-import retrofit2.http.POST
 
 interface ApiService {
-    @POST("auth/login")
-    suspend fun login(
-        @Body loginRequest: LoginRequest
-    ): AuthResponse
+    @GET("v2/home/banners/v2")
+    suspend fun getBanners(): BannersResponse
 
-    @POST("auth/renew-token")
-    suspend fun renewToken(
-        @Body renewTokenRequest: RenewTokenRequest
-    ): AuthResponse
+    @GET("shopping/v2/widgets/quick_link")
+    suspend fun getQuickLinks(): QuickLinksResponse
 
-    @GET("me")
-    suspend fun getMe(): GetMeResponse
-
-    @GET("auth/logout")
-    suspend fun logout(): SuccessResponse
+    @GET("v2/widget/deals/hot")
+    suspend fun getFlashDeals(): FlashDealsResponse
 }

@@ -1,6 +1,5 @@
 package com.github.htdangkhoa.cleanarchitecture.base
 
-import com.github.htdangkhoa.cleanarchitecture.data.model.ResponseExceptionModel
 import com.github.htdangkhoa.cleanarchitecture.resource.OnHandle
 import com.github.htdangkhoa.cleanarchitecture.resource.ResourceHandler
 import kotlinx.coroutines.CancellationException
@@ -39,8 +38,6 @@ abstract class BaseUseCase<Repository : BaseRepository, Params : Any>(val reposi
                 response(result.getOrThrow())
             } catch (cancellation: CancellationException) {
                 response(cancellation)
-            } catch (exception: ResponseExceptionModel) {
-                response(exception)
             } catch (exception: Exception) {
                 response(exception)
             }
